@@ -1,100 +1,113 @@
-import { execSync } from 'child_process';
-import fs from 'fs';
-import path from 'path';
+import { execSync } from "child_process";
+import fs from "fs";
+import path from "path";
 
-console.log('\n[Husky] Running pre-commit file verification...\n');
+console.log("\n[Husky] Running pre-commit verification...\n");
 
-// Helper to recursively get files
+const FILE_REGEX = /\.(ts|tsx|js|jsx)$/;
+
 function getFilesRecursively(dir) {
   let results = [];
-  const list = fs.readdirSync(dir);
-  list.forEach((file) => {
+
+  if (!fs.existsSync(dir)) {
+    return results;
+  }
+
+  const files = fs.readdirSync(dir);
+
+  for (const file of files) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
-    if (stat && stat.isDirectory()) {
+
+    if (stat.isDirectory()) {
       results = results.concat(getFilesRecursively(filePath));
-    } else if (/\.(ts|tsx|js|jsx)$/.test(file)) {
+    } else if (FILE_REGEX.test(file)) {
       results.push(filePath);
     }
-  });
+  }
+
   return results;
 }
 
-// Try git staged files first
+// Get staged files
 let stagedFiles = [];
+
 try {
-  const gitOutput = execSync('git diff --cached --name-only', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
-  stagedFiles = gitOutput
-    .split('\n')
-    .map((f) => f.trim())
-    .filter((f) => f && /\.(ts|tsx|js|jsx)$/.test(f));
-} catch (_err) {
-  // Git fallback
+  const output = execSync(
+    "git diff --cached --name-only --diff-filter=ACMR",
+    {
+      encoding: "utf8",
+    }
+  );
+
+  stagedFiles = output
+    .split("\n")
+    .map((file) => file.trim())
+    .filter((file) => file && FILE_REGEX.test(file));
+} catch {
+  stagedFiles = [];
 }
 
-// Fallback to all source files in src/ if no staged files detected
+// Fallback
 if (stagedFiles.length === 0) {
-  try {
-    stagedFiles = getFilesRecursively('./src');
-  } catch (_err) {
-    stagedFiles = [];
-  }
+  stagedFiles = getFilesRecursively("./src");
 }
 
 if (stagedFiles.length === 0) {
-  console.log('No TypeScript/JavaScript files found for verification.');
-  console.log('------------------------------------------------\n');
+  console.log("No TypeScript/JavaScript files found.");
   process.exit(0);
 }
 
-console.log(`Files To Verify (${stagedFiles.length} file${stagedFiles.length > 1 ? 's' : ''}):`);
-stagedFiles.slice(0, 10).forEach((file) => console.log(`   • ${file}`));
-if (stagedFiles.length > 10) {
-  console.log(`   ... and ${stagedFiles.length - 10} more files`);
-}
-console.log('------------------------------------------------\n');
+console.log(`Files to verify (${stagedFiles.length}):`);
+
+stagedFiles.forEach((file) => {
+  console.log(`   • ${file}`);
+});
+
+console.log("\n------------------------------------------------\n");
 
 let hasErrors = false;
 
-// 2. ESLint Check
-console.log('[1/2] Checking ESLint Code Quality...');
+// ESLint
+console.log("[1/2] Checking ESLint...");
+
 try {
-  execSync('npx eslint .', { stdio: 'pipe' });
-  console.log('   Passed: All project files passed ESLint checks (0 errors)\n');
-} catch (error) {
-  hasErrors = true;
-  console.log('   FAILED: ESLint check found issues!');
-  console.log('   ---------------------------------------------');
-  console.log('   Reason / Error Details:');
-  const output = error.stdout ? error.stdout.toString() : error.stderr ? error.stderr.toString() : error.message;
-  output.split('\n').forEach((line) => {
-    if (line.trim()) console.log(`      ${line}`);
+  execSync("npx eslint .", {
+    stdio: "inherit",
   });
-  console.log('   ---------------------------------------------\n');
+
+  console.log("\n   ✓ ESLint passed\n");
+} catch {
+  hasErrors = true;
+
+  console.log("\n   ✗ ESLint failed\n");
 }
 
-// 3. TypeScript Type Checker
-console.log('[2/2] Checking TypeScript Types (tsc -b)...');
+// TypeScript
+console.log("[2/2] Checking TypeScript...");
+
 try {
-  execSync('npx tsc -b', { stdio: 'pipe' });
-  console.log('   Passed: All TypeScript types are 100% valid (0 errors)\n');
-} catch (error) {
-  hasErrors = true;
-  console.log('   FAILED: TypeScript type check failed!');
-  console.log('   ---------------------------------------------');
-  console.log('   Reason / Error Details:');
-  const output = error.stdout ? error.stdout.toString() : error.stderr ? error.stderr.toString() : error.message;
-  output.split('\n').forEach((line) => {
-    if (line.trim()) console.log(`      ${line}`);
+  execSync("npx tsc -b", {
+    stdio: "inherit",
   });
-  console.log('   ---------------------------------------------\n');
+
+  console.log("\n   ✓ TypeScript passed\n");
+} catch {
+  hasErrors = true;
+
+  console.log("\n   ✗ TypeScript failed\n");
 }
 
-console.log('------------------------------------------------');
+console.log("------------------------------------------------");
+
 if (hasErrors) {
-  console.log('Pre-commit verification FAILED! Fix the errors above before committing.\n');
+  console.log("\n✗ Pre-commit verification FAILED.");
+  console.log("Fix the errors before committing.\n");
+
   process.exit(1);
-} else {
-  console.log('All files verified successfully! Proceeding with commit...\n');
-  process.exit(0);
 }
+
+console.log("\n✓ All checks passed.");
+console.log("✓ Proceeding with commit...\n");
+
+process.exit(0);
