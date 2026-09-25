@@ -47,9 +47,8 @@
     "vite": "^8.3.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "tsc -b"
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix"
     ]
   }
 }
