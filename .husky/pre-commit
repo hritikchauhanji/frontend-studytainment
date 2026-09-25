@@ -1,2 +1,5 @@
 #!/bin/sh
-node .husky/check-staged.js
+
+npx lint-staged
+
+npm run build
