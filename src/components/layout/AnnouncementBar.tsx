@@ -1,5 +1,5 @@
 import React from 'react';
-import { ANNOUNCEMENT } from '@/constants/content.ts';
+import { ANNOUNCEMENT } from '@/constants/content';
 
 export const AnnouncementBar: React.FC = () => {
   return (

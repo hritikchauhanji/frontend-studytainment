@@ -1,4 +1,4 @@
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar.tsx";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import type React from "react";
 
 
