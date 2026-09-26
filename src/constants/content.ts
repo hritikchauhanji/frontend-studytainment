@@ -6,6 +6,15 @@ export interface ChallengeItem {
   description: string;
 }
 
+export interface ProductItem {
+  id: string;
+  num: string;
+  title: string;
+  tagline: string;
+  description: string;
+  highlights: string[];
+}
+
 export const ANNOUNCEMENT = {
   liveTag: 'LIVE',
   message: 'Own Pace Academy is now live',
@@ -159,3 +168,46 @@ export const APPROACH_PILLARS = [
     icon: 'Compass',
   },
 ];
+
+export const PRODUCTS: ProductItem[] = [
+  {
+    id: 'classroom',
+    num: '01',
+    title: 'Studytainment Classroom',
+    tagline: 'Transforming the way learning happens inside the classroom.',
+    description: 'Empowering educators and students with interactive smart tools, collaborative whiteboards, and real-time concept visualization.',
+    highlights: ['Interactive smart boards', 'Seamless educator tools', 'Active peer collaboration', 'Real-time concept drills'],
+  },
+  {
+    id: 'smart-study',
+    num: '02',
+    title: 'Smart Study',
+    tagline: 'Helping learners become more confident and independent.',
+    description: 'A personalized learning companion that adapts to individual mastery levels, tracks progress, and provides instant targeted practice.',
+    highlights: ['Adaptive practice engines', 'Progress analytics', 'Personalized review cards', 'Interactive self-testing'],
+  },
+  {
+    id: 'online-classes',
+    num: '03',
+    title: 'Online Classroom',
+    tagline: 'Meaningful learning, beyond physical boundaries.',
+    description: 'Engaging, live interactive sessions with expert mentors, active discussions, instant Q&A, and high-definition learning streams.',
+    highlights: ['Live interactive sessions', 'Instant doubt resolution', 'Recorded masterclasses', 'Global peer discussions'],
+  },
+];
+
+export const DEMO_PROGRESS_DATA = {
+  studentName: 'Alex Rivera',
+  grade: 'Class X • Smart Learner',
+  subjects: [
+    { name: 'Mathematics', score: 87, color: 'bg-purple-500', text: 'text-purple-600 dark:text-purple-400' },
+    { name: 'Science', score: 78, color: 'bg-amber-500', text: 'text-amber-600 dark:text-amber-400' },
+    { name: 'Communication', score: 94, color: 'bg-emerald-500', text: 'text-emerald-600 dark:text-emerald-400' },
+  ],
+  features: [
+    { title: 'AI Guidance', desc: 'Real-time personalized study suggestions & topic suggestions.', icon: 'Bot' },
+    { title: 'Learning Progress', desc: 'Visual milestone tracking across all active subjects.', icon: 'TrendingUp' },
+    { title: 'Expert Sessions', desc: 'Direct live access to top mentors and guidance counsellors.', icon: 'Video' },
+    { title: 'Growth Tracking', desc: 'Holistic feedback beyond academic grades.', icon: 'Target' },
+  ],
+};
