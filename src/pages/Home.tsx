@@ -1,5 +1,6 @@
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Navbar } from "@/components/layout/Navbar";
+import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
 import { EcosystemSection } from "@/sections/EcosystemSection/EcosystemSection";
 import { HeroSection } from "@/sections/Hero/HeroSection";
 import type React from "react";
@@ -24,6 +25,8 @@ export const Home: React.FC = () => {
                 {/* 4. Ecosystem Section / What is Studytainment? */}
                 <EcosystemSection />
 
+                {/* 5. Challenges Section */}
+                <ChallengesSection />
             </main>
         </div>
     )

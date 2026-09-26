@@ -1,3 +1,11 @@
+export interface ChallengeItem {
+  id: number;
+  title: string;
+  oldWay: string;
+  studytainmentWay: string;
+  description: string;
+}
+
 export const ANNOUNCEMENT = {
   liveTag: 'LIVE',
   message: 'Own Pace Academy is now live',
@@ -64,5 +72,57 @@ export const ECOSYSTEM_CARDS = [
     gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent',
     borderColor: 'group-hover:border-emerald-500/40',
     iconColor: 'text-emerald-600 dark:text-emerald-400',
+  },
+];
+
+export const CHALLENGES: ChallengeItem[] = [
+  {
+    id: 1,
+    title: 'Rote learning over real understanding',
+    oldWay: 'Rote Memorization',
+    studytainmentWay: 'Deep Conceptual Understanding',
+    description: 'Moving away from cramming facts for exams towards exploring real-world applications and genuine comprehension.',
+  },
+  {
+    id: 2,
+    title: 'One approach for every learner',
+    oldWay: 'One-Size-Fits-All Pace',
+    studytainmentWay: 'Personalized Adaptive Pathways',
+    description: 'Recognizing that every student absorbs knowledge uniquely, allowing learners to thrive at their own rhythm.',
+  },
+  {
+    id: 3,
+    title: 'Rising academic pressure',
+    oldWay: 'Exam Anxiety & Stress',
+    studytainmentWay: 'Balanced & Motivating Growth',
+    description: 'Replacing high-stakes fear with constructive curiosity, emotional resilience, and engaging learning experiences.',
+  },
+  {
+    id: 4,
+    title: 'Difficulty with independent learning',
+    oldWay: 'Passive Helplessness',
+    studytainmentWay: 'Self-Driven Confidence',
+    description: 'Empowering students with smart toolkits, guided practice, and habits to become self-reliant learners.',
+  },
+  {
+    id: 5,
+    title: 'Passive digital learning',
+    oldWay: 'Isolated Screen Time',
+    studytainmentWay: 'Interactive & Social Engagement',
+    description: 'Transforming boring lecture videos into active problem-solving, collaborative tasks, and dynamic feedback.',
+  },
+  {
+    id: 6,
+    title: 'The gap beyond academics',
+    oldWay: 'Marks-Only Focus',
+    studytainmentWay: 'Holistic Life & Skill Readiness',
+    description: 'Integrating emotional well-being, communication, leadership, and critical thinking into daily development.',
+  },
+  {
+    id: 7,
+    title: 'Fragmented guidance while growing up',
+    oldWay: 'Confusing & Isolated Advice',
+    studytainmentWay: 'Connected Ecosystem Mentorship',
+    description: 'Uniting parents, educators, and mentors around the learner across every critical age transition.',
   },
 ];
