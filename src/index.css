@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 /* ============================================
    DESIGN TOKENS
 ============================================ */
@@ -122,4 +125,116 @@ h6 {
 
 * {
   border-color: var(--border);
+}
+
+
+/* ============================================
+   GLASS
+============================================ */
+
+.glass-panel {
+  background: color-mix(
+    in srgb,
+    var(--card) 85%,
+    transparent
+  );
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid var(--border);
+
+  box-shadow:
+    0 25px 50px -12px
+    rgba(15, 23, 42, 0.12);
+}
+
+.dark .glass-panel {
+  background: rgba(20, 26, 41, 0.85);
+
+  box-shadow:
+    0 20px 40px -15px
+    rgba(0, 0, 0, 0.5);
+}
+
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--card-foreground);
+  box-shadow: 0 14px 35px -8px rgba(15, 23, 42, 0.09);
+}
+
+.dark .glass-card {
+  background: rgba(20, 26, 41, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================
+   GRADIENT TEXT
+============================================ */
+
+.text-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    #3b0764 0%,
+    #5b21b6 40%,
+    #7e22ce 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+.dark .text-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    #a78bfa 0%,
+    #c084fc 50%,
+    #f472b6 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(135deg, #b45309 0%, #c2410c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.dark .text-gradient-amber {
+  background: linear-gradient(135deg, #ffb84d 0%, #ff7a00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+/* ============================================
+   SCROLLBAR
+============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 0.8);
 }
