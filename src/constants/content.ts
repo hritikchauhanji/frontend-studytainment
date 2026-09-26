@@ -126,3 +126,36 @@ export const CHALLENGES: ChallengeItem[] = [
     description: 'Uniting parents, educators, and mentors around the learner across every critical age transition.',
   },
 ];
+
+export const APPROACH_PILLARS = [
+  {
+    title: 'Understanding Before Memorising',
+    description: 'Make concepts easier to understand, explore and apply through visualization and active problem-solving.',
+    icon: 'Sparkles',
+  },
+  {
+    title: 'Technology With a Human Purpose',
+    description: 'Technology should support people rather than replace meaningful human connection and mentorship.',
+    icon: 'HeartHandshake',
+  },
+  {
+    title: 'Learning Across Environments',
+    description: 'Classroom, self-study and online learning should work seamlessly together in a unified ecosystem.',
+    icon: 'Layers',
+  },
+  {
+    title: 'Development Beyond Academics',
+    description: 'Confidence, emotional well-being, life skills and future readiness matter just as much as grades.',
+    icon: 'ShieldCheck',
+  },
+  {
+    title: 'Every Journey Deserves Its Own Pace',
+    description: 'Every learner has a unique pace, potential and way of understanding that deserves respect.',
+    icon: 'Clock',
+  },
+  {
+    title: 'Continuous Curiosity & Real-World Impact',
+    description: 'Transform passive learning into active exploration that inspires lifelong passion and real-world problem-solving.',
+    icon: 'Compass',
+  },
+];
