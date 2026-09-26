@@ -40,9 +40,11 @@ export const HeroVisual: React.FC = () => {
     const resizeCanvas = () => {
       const parent = canvas.parentElement;
       if (!parent) return;
-      const size = Math.min(parent.clientWidth, 550);
-      renderer.setSize(size, size);
-      camera.aspect = 1;
+      const width = parent.clientWidth;
+      const height = parent.clientHeight;
+      if (width === 0 || height === 0) return;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
       camera.updateProjectionMatrix();
     };
 
@@ -194,12 +196,12 @@ export const HeroVisual: React.FC = () => {
   };
 
   const nodePositions = [
-    { label: 'AI Learning', pos: '-top-2 left-2 sm:top-2 sm:left-4', color: 'from-purple-600 to-indigo-700' },
-    { label: 'Growth', pos: '-top-2 right-2 sm:top-4 sm:right-4', color: 'from-amber-600 to-orange-600' },
-    { label: 'Confidence', pos: 'top-1/2 -right-6 sm:-right-4 transform -translate-y-1/2', color: 'from-emerald-600 to-teal-600' },
-    { label: 'Creativity', pos: 'top-1/2 -left-6 sm:-left-4 transform -translate-y-1/2', color: 'from-pink-600 to-rose-600' },
-    { label: 'Future Skills', pos: '-bottom-2 left-2 sm:bottom-4 sm:left-6', color: 'from-cyan-600 to-blue-700' },
-    { label: 'Progress', pos: '-bottom-2 right-2 sm:bottom-4 sm:right-6', color: 'from-violet-600 to-purple-700' },
+    { label: 'AI Learning', pos: 'top-0 left-1 sm:top-2 sm:left-4', color: 'from-purple-600 to-indigo-700' },
+    { label: 'Growth', pos: 'top-0 right-1 sm:top-4 sm:right-4', color: 'from-amber-600 to-orange-600' },
+    { label: 'Confidence', pos: 'top-1/2 right-0 sm:-right-4 transform -translate-y-1/2', color: 'from-emerald-600 to-teal-600' },
+    { label: 'Creativity', pos: 'top-1/2 left-0 sm:-left-4 transform -translate-y-1/2', color: 'from-pink-600 to-rose-600' },
+    { label: 'Future Skills', pos: 'bottom-0 left-1 sm:bottom-4 sm:left-6', color: 'from-cyan-600 to-blue-700' },
+    { label: 'Progress', pos: 'bottom-0 right-1 sm:bottom-4 sm:right-6', color: 'from-violet-600 to-purple-700' },
   ];
 
   return (
@@ -213,7 +215,7 @@ export const HeroVisual: React.FC = () => {
       {/* Central Interactive Core Node */}
       <motion.div
         whileHover={{ scale: 1.06, rotateZ: 2 }}
-        className="relative z-20 w-38 h-38 sm:w-48 sm:h-48 rounded-full bg-gradient-to-tr from-purple-700 via-indigo-700 to-purple-900 p-1 shadow-[0_20px_50px_rgba(91,54,245,0.35)] cursor-pointer flex flex-col items-center justify-center text-center group"
+        className="relative z-20 w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-gradient-to-tr from-purple-700 via-indigo-700 to-purple-900 p-1 shadow-[0_20px_50px_rgba(91,54,245,0.35)] cursor-pointer flex flex-col items-center justify-center text-center group"
       >
         <div className="w-full h-full rounded-full bg-white dark:bg-slate-950 p-4 flex flex-col items-center justify-center border-2 border-purple-400/60 dark:border-purple-500/40 shadow-inner">
           <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 p-2 flex items-center justify-center mb-1 group-hover:scale-110 transition-transform duration-300 shadow-md border-2 border-amber-400/50">
@@ -259,12 +261,12 @@ export const HeroVisual: React.FC = () => {
             onMouseLeave={() => setActiveNode(null)}
             className={`absolute ${node.pos} z-30 cursor-pointer`}
           >
-            <div className="bg-white dark:bg-slate-900 px-4 py-3 rounded-2xl flex items-center gap-3 shadow-[0_15px_35px_-5px_rgba(15,23,42,0.18)] dark:shadow-[0_15px_35px_-5px_rgba(0,0,0,0.6)] border-2 border-slate-300 dark:border-slate-800 hover:border-purple-600 transition-all duration-300">
-              <div className={`w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 shadow-inner`}>
+            <div className="bg-white dark:bg-slate-900 px-2.5 py-1.5 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl flex items-center gap-2 sm:gap-3 shadow-[0_15px_35px_-5px_rgba(15,23,42,0.18)] dark:shadow-[0_15px_35px_-5px_rgba(0,0,0,0.6)] border-2 border-slate-300 dark:border-slate-800 hover:border-purple-600 transition-all duration-300">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 shadow-inner">
                 {getNodeIcon(node.label)}
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-black text-slate-950 dark:text-white tracking-tight whitespace-nowrap">
+                <span className="text-[11px] sm:text-xs font-black text-slate-950 dark:text-white tracking-tight whitespace-nowrap">
                   {node.label}
                 </span>
               </div>
