@@ -5,6 +5,7 @@ import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
 import { EcosystemSection } from "@/sections/EcosystemSection/EcosystemSection";
 import { HeroSection } from "@/sections/Hero/HeroSection";
 import { LearningSolutionsSection } from "@/sections/LearingSolutions/LearingSolutionSection";
+import { OwnPaceSection } from "@/sections/OwnPace/OwnPaceSection";
 import type React from "react";
 
 
@@ -35,6 +36,9 @@ export const Home: React.FC = () => {
 
                 {/* 7. Learning Ecosystem / Product Solutions */}
                 <LearningSolutionsSection />
+
+                {/* 8. Own Pace Academy Timeline Section */}
+                <OwnPaceSection />
             </main>
         </div>
     )
