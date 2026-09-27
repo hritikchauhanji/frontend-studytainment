@@ -4,10 +4,12 @@ import { ThemeToggle } from '../ui/ThemeToggle';
 import { Button } from '../ui/Button';
 import { MobileMenu } from './MobileMenu';
 import { cn } from '@/lib/utils';
+import { useAuthModal } from '@/context/auth/useAuthModal';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openLoginModal, openJoinModal } = useAuthModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,6 +97,7 @@ export const Navbar: React.FC = () => {
             <Button
               variant="amber"
               size="sm"
+              onClick={openLoginModal}
             >
               Login
             </Button>
@@ -103,6 +106,7 @@ export const Navbar: React.FC = () => {
               variant="primary"
               size="sm"
               iconRight={<ArrowUpRight className="w-4 h-4" />}
+              onClick={openJoinModal}
             >
               Join Now
             </Button>

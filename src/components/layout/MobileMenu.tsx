@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { Button } from '../ui/Button';
+import { useAuthModal } from '@/context/auth/useAuthModal';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -11,6 +12,8 @@ interface MobileMenuProps {
 }
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) => {
+
+  const { openLoginModal, openJoinModal } = useAuthModal();
 
   const navItems = [
     { label: 'Home', href: '#hero' },
@@ -93,7 +96,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavig
                   variant="outline"
                   size="md"
                   onClick={() => {
-                    onClose()
+                    onClose();
+                    openLoginModal();
                   }}
                   fullWidth
                 >
@@ -103,7 +107,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavig
                   variant="primary"
                   size="md"
                   onClick={() => {
-                    onClose()
+                    onClose();
+                    openJoinModal();
                   }}
                   fullWidth
                 >
