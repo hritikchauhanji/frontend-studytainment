@@ -1,4 +1,3 @@
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ApproachSection } from "@/sections/Approach/ApproachSection";
@@ -17,48 +16,45 @@ import type React from "react";
 export const Home: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-purple-500/20 selection:text-purple-600 dark:selection:text-purple-400">
-            
-            {/* 1. Announcement Bar */}
-            <AnnouncementBar />
-            
-            {/* 2. Responsive Sticky Navbar */}
+
+            {/* Responsive Sticky Navbar */}
             <Navbar />
 
             {/* Main Content Area */}
             <main className="flex-grow">
 
-                {/* 3. Hero Section */}
+                {/* Hero Section */}
                 <HeroSection />
 
-                {/* 4. Ecosystem Section / What is Studytainment? */}
+                {/* Ecosystem Section / What is Studytainment? */}
                 <EcosystemSection />
 
-                {/* 5. Challenges Section */}
+                {/* Challenges Section */}
                 <ChallengesSection />
 
-                {/* 6. Studytainment Approach Section */}
+                {/* Studytainment Approach Section */}
                 <ApproachSection />
 
-                {/* 7. Learning Ecosystem / Product Solutions */}
+                {/* Learning Ecosystem / Product Solutions */}
                 <LearningSolutionsSection />
 
-                {/* 8. Own Pace Academy Timeline Section */}
+                {/* Own Pace Academy Timeline Section */}
                 <OwnPaceSection />
 
-                {/* 9. Digital Experience / App Preview Section */}
+                {/* Digital Experience / App Preview Section */}
                 <DigitalExperienceSection />
 
-                {/* 10. Our Focus. Their Future. Section */}
+                {/* Our Focus. Their Future. Section */}
                 <FocusSection />
 
-                {/* 11. Community Section */}
+                {/* Community Section */}
                 <CommunitySection />
 
-                {/* 12. Closing CTA Section */}
+                {/* Closing CTA Section */}
                 <CTASection />
             </main>
 
-            {/* 13. Complete Responsive Footer */}
+            {/* Complete Responsive Footer */}
             <Footer />
         </div>
     )
