@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -19,6 +19,18 @@ import {
 
 export const OwnPaceSection: React.FC = () => {
   const [activeStage, setActiveStage] = useState<TimelineStage>(OPA_STAGES[0]);
+  const detailCardRef = useRef<HTMLDivElement>(null);
+
+  const handleStageSelect = (stage: TimelineStage) => {
+    setActiveStage(stage);
+    // Smooth scroll to the details card, especially beneficial on mobile views
+    setTimeout(() => {
+      detailCardRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      });
+    }, 50);
+  };
 
   const getStageIcon = (id: string) => {
     switch (id) {
@@ -29,7 +41,7 @@ export const OwnPaceSection: React.FC = () => {
       case 'career-success':
         return <Award className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />;
       default:
-        return <Sparkles className="w-5 h-5 text-amber-600 dark:text-amber-400" />;
+        return <Sparkles className="w-5 h-5 text-amber-400 dark:text-amber-400" />;
     }
   };
 
@@ -88,7 +100,7 @@ export const OwnPaceSection: React.FC = () => {
               return (
                 <button
                   key={stage.id}
-                  onClick={() => setActiveStage(stage)}
+                  onClick={() => handleStageSelect(stage)}
                   className={`w-full text-left p-6 rounded-3xl transition-all duration-300 cursor-pointer border-2 relative overflow-hidden ${
                     isSelected
                       ? 'bg-slate-950 dark:bg-slate-900 text-white shadow-2xl border-amber-400 scale-105'
@@ -142,17 +154,18 @@ export const OwnPaceSection: React.FC = () => {
         {/* Selected Stage Detail Display Card */}
         <AnimatePresence mode="wait">
           <motion.div
+            ref={detailCardRef}
             key={activeStage.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
+            className="scroll-mt-28"
           >
             <GlassCard glow="amber" className="p-8 sm:p-10 border-2 border-amber-500/40 bg-white dark:bg-slate-900">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
                   <div className="flex items-center gap-2 mb-3">
-                    {getStageIcon(activeStage.id)}
                     <span className="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
                       {activeStage.badge} Stage ({activeStage.ageRange})
                     </span>
