@@ -4,6 +4,7 @@ import { ApproachSection } from "@/sections/Approach/ApproachSection";
 import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
 import { DigitalExperienceSection } from "@/sections/DigitalExperience/DigitalExperienceSection";
 import { EcosystemSection } from "@/sections/EcosystemSection/EcosystemSection";
+import { FocusSection } from "@/sections/Focus/FocusSection";
 import { HeroSection } from "@/sections/Hero/HeroSection";
 import { LearningSolutionsSection } from "@/sections/LearingSolutions/LearingSolutionSection";
 import { OwnPaceSection } from "@/sections/OwnPace/OwnPaceSection";
@@ -43,6 +44,9 @@ export const Home: React.FC = () => {
 
                 {/* 9. Digital Experience / App Preview Section */}
                 <DigitalExperienceSection />
+
+                {/* 10. Our Focus. Their Future. Section */}
+                <FocusSection />
             </main>
         </div>
     )
