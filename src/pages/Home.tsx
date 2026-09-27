@@ -4,6 +4,7 @@ import { ApproachSection } from "@/sections/Approach/ApproachSection";
 import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
 import { EcosystemSection } from "@/sections/EcosystemSection/EcosystemSection";
 import { HeroSection } from "@/sections/Hero/HeroSection";
+import { LearningSolutionsSection } from "@/sections/LearingSolutions/LearingSolutionSection";
 import type React from "react";
 
 
@@ -31,6 +32,9 @@ export const Home: React.FC = () => {
 
                 {/* 6. Studytainment Approach Section */}
                 <ApproachSection />
+
+                {/* 7. Learning Ecosystem / Product Solutions */}
+                <LearningSolutionsSection />
             </main>
         </div>
     )
