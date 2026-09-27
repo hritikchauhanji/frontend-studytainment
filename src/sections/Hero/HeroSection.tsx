@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 import { HeroVisual } from './HeroVisual';
 import { HERO_CONTENT } from '@/constants/content';
 import { fadeUp, fadeIn } from '@/lib/utils';
@@ -34,13 +33,6 @@ export const HeroSection: React.FC = () => {
             variants={fadeUp(0, 0.7)}
             className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-            {/* Eyebrow Badge */}
-            <div className="mb-6">
-              <Badge variant="purple" pulse>
-                {HERO_CONTENT.badge}
-              </Badge>
-            </div>
-
             {/* Giant Modern Typography Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.08] mb-6">
               {HERO_CONTENT.headlineLine1}{' '}

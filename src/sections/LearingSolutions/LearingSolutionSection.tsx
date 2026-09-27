@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { BrowserMockup } from '@/components/ui/BrowserMockup';
-import { Badge } from '@/components/ui/Badge';
 import { PRODUCTS, DEMO_PROGRESS_DATA } from '@/constants/content';
 import {
   CheckCircle2,
@@ -21,8 +20,6 @@ export const LearningSolutionsSection: React.FC = () => {
     <section id="learning-ecosystem" className="py-20 sm:py-28 bg-slate-200/50 dark:bg-slate-950/40 relative overflow-hidden border-y border-slate-300/70 dark:border-slate-800/60">
       <Container>
         <SectionHeading
-          badge="Product Ecosystem"
-          badgeVariant="purple"
           title={
             <>
               Learning, <span className="text-gradient-primary">Wherever It Happens.</span>
@@ -65,10 +62,6 @@ export const LearningSolutionsSection: React.FC = () => {
             >
               {/* Left Column: Product Info */}
               <div className="lg:col-span-5 flex flex-col items-start">
-                <Badge variant="purple" className="mb-4">
-                  Experience {product.num}
-                </Badge>
-
                 <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-950 dark:text-white mb-4">
                   {product.title}
                 </h3>

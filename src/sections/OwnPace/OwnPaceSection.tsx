@@ -53,9 +53,6 @@ export const OwnPaceSection: React.FC = () => {
 
       <Container>
         <SectionHeading
-          badge="Signature Lifelong Journey"
-          badgeVariant="amber"
-          badgeIcon={<Compass className="w-4 h-4" />}
           title={
             <>
               Learning Is Only One Part of{' '}
@@ -107,17 +104,8 @@ export const OwnPaceSection: React.FC = () => {
                       : 'bg-white dark:bg-slate-900 text-slate-950 dark:text-slate-200 border-slate-300 dark:border-slate-800 hover:border-amber-400 shadow-md'
                   }`}
                 >
-                  {/* Stage Top Tag & Age */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className={`text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full ${
-                        isSelected
-                          ? 'bg-amber-400 text-slate-950'
-                          : 'bg-amber-100 dark:bg-slate-800 text-amber-950 dark:text-amber-400'
-                      }`}
-                    >
-                      {stage.badge}
-                    </span>
+                  {/* Stage Age */}
+                  <div className="flex items-center justify-end mb-4">
                     <span className="text-xs font-extrabold text-amber-600 dark:text-amber-400 font-mono">
                       {stage.ageRange}
                     </span>
@@ -167,7 +155,7 @@ export const OwnPaceSection: React.FC = () => {
                 <div className="lg:col-span-7">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
-                      {activeStage.badge} Stage ({activeStage.ageRange})
+                      Stage ({activeStage.ageRange})
                     </span>
                   </div>
 
@@ -197,7 +185,7 @@ export const OwnPaceSection: React.FC = () => {
                     {getStageIcon(activeStage.id)}
                   </div>
                   <h4 className="text-lg font-extrabold text-slate-950 dark:text-white mb-2">
-                    Start {activeStage.badge} Guidance
+                    Start Guidance
                   </h4>
                   <p className="text-xs text-slate-700 dark:text-slate-400 font-semibold mb-4 max-w-xs">
                     Empowering long-term growth across critical life milestones.

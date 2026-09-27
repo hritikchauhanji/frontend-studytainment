@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 import { ArrowRight, Compass } from 'lucide-react';
 import { fadeUp } from '@/lib/utils';
 
@@ -28,10 +27,6 @@ export const CTASection: React.FC = () => {
           variants={fadeUp(0, 0.6)}
           className="max-w-4xl mx-auto text-center flex flex-col items-center p-8 sm:p-14 rounded-3xl bg-white/95 dark:bg-slate-900/80 border-2 border-purple-500/40 shadow-2xl backdrop-blur-xl"
         >
-          <Badge variant="amber" pulse className="mb-6">
-            Start Exploring Today
-          </Badge>
-
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 dark:text-white tracking-tight leading-[1.1] mb-6">
             Ready to Change the Way{' '}
             <span className="text-gradient-primary">You Learn?</span>

@@ -25,8 +25,6 @@ export const CommunitySection: React.FC = () => {
     <section id="community" className="py-20 sm:py-28 bg-slate-200/50 dark:bg-slate-950/40 relative overflow-hidden border-y border-slate-300/70 dark:border-slate-800/60">
       <Container>
         <SectionHeading
-          badge="Ecosystem Community"
-          badgeVariant="amber"
           title={
             <>
               Stay Connected.{' '}

@@ -29,8 +29,6 @@ export const ChallengesSection: React.FC = () => {
     <section id="challenges" className="py-20 sm:py-28 bg-slate-200/50 dark:bg-slate-950/40 relative overflow-hidden border-y border-slate-300/70 dark:border-slate-800/60">
       <Container>
         <SectionHeading
-          badge="Reimagining the Learning Journey"
-          badgeVariant="amber"
           title={
             <>
               Education is changing.{' '}

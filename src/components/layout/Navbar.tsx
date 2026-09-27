@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
     { label: 'Home', href: '#hero' },
     { label: 'About', href: '#what-is-studytainment' },
     { label: 'Solutions', href: '#learning-ecosystem' },
-    { label: 'Own Pace Academy', href: '#own-pace-academy', badge: 'OPA' },
+    { label: 'Own Pace Academy', href: '#own-pace-academy' },
     { label: 'Our Focus', href: '#our-focus' },
     { label: 'Community', href: '#community' },
   ];
@@ -81,11 +81,6 @@ export const Navbar: React.FC = () => {
                 className="relative px-3.5 py-1.5 text-sm font-extrabold text-slate-900 dark:text-slate-200 hover:text-purple-700 dark:hover:text-purple-400 transition-colors rounded-full flex items-center gap-1.5"
               >
                 <span>{link.label}</span>
-                {link.badge && (
-                  <span className="text-[10px] font-black bg-gradient-to-r from-amber-600 to-orange-600 text-white px-1.5 py-0.5 rounded-full shadow-xs">
-                    {link.badge}
-                  </span>
-                )}
               </a>
             ))}
           </nav>

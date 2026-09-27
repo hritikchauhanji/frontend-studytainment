@@ -27,8 +27,6 @@ export const FocusSection: React.FC = () => {
     <section id="our-focus" className="py-20 sm:py-28 relative overflow-hidden">
       <Container>
         <SectionHeading
-          badge="Core Principles"
-          badgeVariant="purple"
           title={
             <>
               Our Focus.{' '}

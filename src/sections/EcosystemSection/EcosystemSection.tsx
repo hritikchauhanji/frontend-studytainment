@@ -30,8 +30,6 @@ export const EcosystemSection: React.FC = () => {
 
       <Container>
         <SectionHeading
-          badge="What is Studytainment?"
-          badgeVariant="purple"
           title={
             <>
               One Ecosystem.{' '}
@@ -55,14 +53,11 @@ export const EcosystemSection: React.FC = () => {
                 className="h-full flex flex-col justify-between group border-2 border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md"
               >
                 <div>
-                  {/* Top Badge & Icon */}
+                  {/* Top Icon */}
                   <div className="flex items-center justify-between mb-6">
                     <div className={`w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 ${card.iconColor} flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300`}>
                       {getCardIcon(card.icon)}
                     </div>
-                    <span className="text-[11px] font-black uppercase tracking-wider text-slate-900 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-300 dark:border-slate-700">
-                      {card.badge}
-                    </span>
                   </div>
 
                   {/* Card Title */}
