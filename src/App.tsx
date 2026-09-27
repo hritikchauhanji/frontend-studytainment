@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLenis } from '@/lib/useLenis';
 import { Home } from '@/pages/Home';
-import { ThemeProvider } from  '@/context/ThemeProvider';
-import { AuthModalProvider } from '@/context/AuthModalProvider';
+import { ThemeProvider } from  '@/context/theme/ThemeProvider';
+import { AuthModalProvider } from '@/context/auth/AuthModalProvider';
 import { AuthModal } from '@/components/ui/AuthModal';
 
 const AppContent: React.FC = () => {

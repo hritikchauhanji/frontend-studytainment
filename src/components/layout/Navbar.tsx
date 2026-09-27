@@ -4,7 +4,7 @@ import { ThemeToggle } from '../ui/ThemeToggle';
 import { Button } from '../ui/Button';
 import { MobileMenu } from './MobileMenu';
 import { cn } from '@/lib/utils';
-import { useAuthModal } from '@/context/useAuthModal';
+import { useAuthModal } from '@/context/auth/useAuthModal';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -12,7 +12,7 @@ import {
   Compass,
   Zap,
 } from 'lucide-react';
-import { useTheme } from '@/context/useTheme';
+import { useTheme } from '@/context/theme/useTheme';
 
 export const HeroVisual: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

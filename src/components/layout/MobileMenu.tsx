@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { Button } from '../ui/Button';
-import { useAuthModal } from '@/context/useAuthModal';
+import { useAuthModal } from '@/context/auth/useAuthModal';
 
 interface MobileMenuProps {
   isOpen: boolean;
