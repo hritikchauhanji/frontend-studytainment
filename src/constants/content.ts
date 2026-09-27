@@ -259,3 +259,26 @@ export const OPA_STAGES: TimelineStage[] = [
     iconName: 'Award',
   },
 ];
+
+export const FOCUS_PILLARS = [
+  {
+    title: 'Meaningful Learning',
+    description: 'Understand concepts deeply, not just memorize answers for a single test.',
+    icon: 'Lightbulb',
+  },
+  {
+    title: 'Learner-Centred Growth',
+    description: 'Every learner has a unique pace, potential, and individual strength.',
+    icon: 'UserCheck',
+  },
+  {
+    title: 'Engagement & Curiosity',
+    description: 'Learning should encourage open exploration, inquiry, and delight.',
+    icon: 'Compass',
+  },
+  {
+    title: 'Growth Beyond Academics',
+    description: 'Confidence, well-being, and life skills matter just as much as marks.',
+    icon: 'Heart',
+  },
+];
