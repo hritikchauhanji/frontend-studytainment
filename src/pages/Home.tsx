@@ -2,6 +2,7 @@ import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { ApproachSection } from "@/sections/Approach/ApproachSection";
 import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
+import { CommunitySection } from "@/sections/Community/CommunitySection";
 import { DigitalExperienceSection } from "@/sections/DigitalExperience/DigitalExperienceSection";
 import { EcosystemSection } from "@/sections/EcosystemSection/EcosystemSection";
 import { FocusSection } from "@/sections/Focus/FocusSection";
@@ -47,6 +48,9 @@ export const Home: React.FC = () => {
 
                 {/* 10. Our Focus. Their Future. Section */}
                 <FocusSection />
+
+                {/* 11. Community Section */}
+                <CommunitySection />
             </main>
         </div>
     )
