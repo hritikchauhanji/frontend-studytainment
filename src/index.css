@@ -96,9 +96,15 @@
 }
 
 
-/* ============================================
-   BASE
-============================================ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+section,
+footer {
+  scroll-margin-top: 100px;
+}
 
 body {
   background-color: var(--background);

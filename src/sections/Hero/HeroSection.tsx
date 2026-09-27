@@ -11,7 +11,13 @@ export const HeroSection: React.FC = () => {
   const handleScrollTo = (id: string) => {
     const el = document.querySelector(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 95;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -33,11 +39,35 @@ export const HeroSection: React.FC = () => {
             variants={fadeUp(0, 0.7)}
             className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-            {/* Giant Modern Typography Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.08] mb-6">
-              {HERO_CONTENT.headlineLine1}{' '}
-              <span className="text-gradient-primary block sm:inline">
-                {HERO_CONTENT.headlineLine2}
+            {/* Giant Modern Typography Headline with Staggered Word Reveal */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.08] mb-6 flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-1">
+              {HERO_CONTENT.headlineLine1.split(' ').map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 25, rotateX: 30 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.2, 0.65, 0.3, 0.9] }}
+                  className="inline-block"
+                >
+                  {word}
+                </motion.span>
+              ))}
+              <span className="text-gradient-primary inline-flex flex-wrap gap-x-3">
+                {HERO_CONTENT.headlineLine2.split(' ').map((word, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 25, rotateX: 30 }}
+                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: (HERO_CONTENT.headlineLine1.split(' ').length + i) * 0.08,
+                      ease: [0.2, 0.65, 0.3, 0.9],
+                    }}
+                    className="inline-block"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
               </span>
             </h1>
 

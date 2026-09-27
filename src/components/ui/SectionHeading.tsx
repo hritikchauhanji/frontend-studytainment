@@ -38,6 +38,14 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         {title}
       </h2>
 
+      <motion.div
+        initial={{ width: 0, opacity: 0 }}
+        whileInView={{ width: '56px', opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="h-1 rounded-full bg-gradient-to-r from-purple-600 via-amber-500 to-emerald-500 mt-4"
+      />
+
       {subtitle && (
         <p className="mt-4 text-base sm:text-lg text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
           {subtitle}

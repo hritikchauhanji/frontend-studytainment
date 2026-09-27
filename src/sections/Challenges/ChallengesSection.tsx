@@ -81,9 +81,9 @@ export const ChallengesSection: React.FC = () => {
         </motion.div>
 
         {/* 7 Challenges Interactive Selector Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Challenge List */}
-          <div className="lg:col-span-6 space-y-3">
+          <div className="lg:col-span-6 space-y-3 flex flex-col justify-between">
             {CHALLENGES.map((challenge) => {
               const isSelected = activeChallenge.id === challenge.id;
               return (
@@ -121,7 +121,7 @@ export const ChallengesSection: React.FC = () => {
           </div>
 
           {/* Right Column: Active Challenge Detail Focus Card */}
-          <div ref={detailRef} className="lg:col-span-6 sticky top-28 scroll-mt-24 min-h-[360px]">
+          <div ref={detailRef} className="lg:col-span-6 sticky top-28 scroll-mt-24 h-full flex flex-col">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeChallenge.id}
@@ -129,23 +129,30 @@ export const ChallengesSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
+                className="h-full flex flex-col flex-1"
               >
-                <GlassCard glow="purple" className="border-2 border-purple-400/40 p-8 bg-white dark:bg-slate-900">
-                  <div className="flex items-center gap-2 mb-4 text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
-                    <AlertCircle className="w-4 h-4" />
-                    Challenge #{activeChallenge.id} Deep Dive
+                <GlassCard
+                  glow="purple"
+                  className="border-2 border-purple-400/40 p-8 bg-white dark:bg-slate-900 h-full flex flex-col flex-1"
+                  contentClassName="h-full flex flex-col justify-between flex-1"
+                >
+                  <div>
+                    <div className="flex items-center gap-2 mb-4 text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+                      <AlertCircle className="w-4 h-4" />
+                      Challenge #{activeChallenge.id} Deep Dive
+                    </div>
+
+                    <h3 className="text-2xl font-extrabold text-slate-950 dark:text-white mb-4">
+                      {activeChallenge.title}
+                    </h3>
+
+                    <p className="text-slate-700 dark:text-slate-300 text-base font-medium leading-relaxed mb-6">
+                      {activeChallenge.description}
+                    </p>
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-slate-950 dark:text-white mb-4">
-                    {activeChallenge.title}
-                  </h3>
-
-                  <p className="text-slate-700 dark:text-slate-300 text-base font-medium leading-relaxed mb-8">
-                    {activeChallenge.description}
-                  </p>
-
                   {/* Flow chart illustration */}
-                  <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                  <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 mt-auto">
                     <div className="text-xs font-extrabold text-slate-700 dark:text-slate-400 uppercase tracking-wider mb-3">
                       The Shift
                     </div>

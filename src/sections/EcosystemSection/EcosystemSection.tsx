@@ -44,13 +44,14 @@ export const EcosystemSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer(0.15)}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch"
         >
           {ECOSYSTEM_CARDS.map((card) => (
-            <motion.div key={card.id} variants={fadeUp(0, 0.5)}>
+            <motion.div key={card.id} variants={fadeUp(0, 0.5)} className="h-full flex flex-col">
               <GlassCard
                 glow={card.id === 'learning' ? 'purple' : card.id === 'guidance' ? 'amber' : 'emerald'}
-                className="h-full flex flex-col justify-between group border-2 border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md"
+                className="h-full flex flex-col flex-1 group border-2 border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md"
+                contentClassName="h-full flex flex-col justify-between flex-1"
               >
                 <div>
                   {/* Top Icon */}
@@ -71,8 +72,8 @@ export const EcosystemSection: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Subtle Action Hover Arrow */}
-                <div className="pt-4 border-t-2 border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-xs font-black text-slate-950 dark:text-slate-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors">
+                {/* Subtle Action Hover Arrow aligned to bottom */}
+                <div className="pt-4 border-t-2 border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-xs font-black text-slate-950 dark:text-slate-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors mt-auto">
                   <span>Explore</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
