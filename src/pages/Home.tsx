@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { ApproachSection } from "@/sections/Approach/ApproachSection";
 import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
 import { CommunitySection } from "@/sections/Community/CommunitySection";
+import { CTASection } from "@/sections/CTA/CTASection";
 import { DigitalExperienceSection } from "@/sections/DigitalExperience/DigitalExperienceSection";
 import { EcosystemSection } from "@/sections/EcosystemSection/EcosystemSection";
 import { FocusSection } from "@/sections/Focus/FocusSection";
@@ -51,6 +52,9 @@ export const Home: React.FC = () => {
 
                 {/* 11. Community Section */}
                 <CommunitySection />
+
+                {/* 12. Closing CTA Section */}
+                <CTASection />
             </main>
         </div>
     )
