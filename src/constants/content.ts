@@ -15,6 +15,18 @@ export interface ProductItem {
   highlights: string[];
 }
 
+export interface TimelineStage {
+  id: string;
+  badge: string;
+  ageRange: string;
+  title: string;
+  subTitle: string;
+  actions: string[];
+  description: string;
+  features: string[];
+  iconName: string;
+}
+
 export const ANNOUNCEMENT = {
   liveTag: 'LIVE',
   message: 'Own Pace Academy is now live',
@@ -211,3 +223,39 @@ export const DEMO_PROGRESS_DATA = {
     { title: 'Growth Tracking', desc: 'Holistic feedback beyond academic grades.', icon: 'Target' },
   ],
 };
+
+export const OPA_STAGES: TimelineStage[] = [
+  {
+    id: 'foundation',
+    badge: 'FOUNDATION',
+    ageRange: 'Age 3–12',
+    title: 'Foundation Journey',
+    subTitle: 'Sparking Curiosity & Building Character',
+    actions: ['Learn', 'Explore', 'Build Confidence'],
+    description: 'Early years focus on building natural curiosity, foundational literacy, emotional safety, creative expression, and core confidence.',
+    features: ['Curiosity-first exploration', 'Emotional well-being basics', 'Creative expression modules', 'Parent-child bonding tools'],
+    iconName: 'Sparkle',
+  },
+  {
+    id: 'rising-star',
+    badge: 'RISING STAR',
+    ageRange: 'Age 13–20',
+    title: 'Rising Star Journey',
+    subTitle: 'Navigating Identity & Future Readiness',
+    actions: ['Discover', 'Develop', 'Prepare'],
+    description: 'Teenage and young adult years centered on self-discovery, academic mastery, emotional resilience, skill building, and career exploration.',
+    features: ['Career pathway discovery', 'Stress & emotional management', 'Life skills & communication', 'Mentorship & peer circles'],
+    iconName: 'Rocket',
+  },
+  {
+    id: 'career-success',
+    badge: 'CAREER SUCCESS',
+    ageRange: 'Age 21–30',
+    title: 'Career & Life Success',
+    subTitle: 'Translating Potential into Lasting Impact',
+    actions: ['Choose', 'Build', 'Grow'],
+    description: 'Young professional years focused on strategic career execution, leadership growth, continuous learning, and adult well-being.',
+    features: ['Professional skill acceleration', 'Mentorship & leadership', 'Personal growth & balance', 'Career transition guidance'],
+    iconName: 'Award',
+  },
+];
