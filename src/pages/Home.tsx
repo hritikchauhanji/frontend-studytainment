@@ -2,6 +2,7 @@ import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { ApproachSection } from "@/sections/Approach/ApproachSection";
 import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
+import { DigitalExperienceSection } from "@/sections/DigitalExperience/DigitalExperienceSection";
 import { EcosystemSection } from "@/sections/EcosystemSection/EcosystemSection";
 import { HeroSection } from "@/sections/Hero/HeroSection";
 import { LearningSolutionsSection } from "@/sections/LearingSolutions/LearingSolutionSection";
@@ -39,6 +40,9 @@ export const Home: React.FC = () => {
 
                 {/* 8. Own Pace Academy Timeline Section */}
                 <OwnPaceSection />
+
+                {/* 9. Digital Experience / App Preview Section */}
+                <DigitalExperienceSection />
             </main>
         </div>
     )
