@@ -44,17 +44,19 @@ export const ApproachSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer(0.12)}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch"
         >
           {APPROACH_PILLARS.map((pillar, idx) => {
             return (
               <motion.div
                 key={pillar.title}
                 variants={fadeUp(0, 0.5)}
+                className="h-full flex flex-col"
               >
                 <GlassCard
                   glow="purple"
-                  className="h-full flex flex-col justify-between border border-slate-200 dark:border-slate-800 p-8 group"
+                  className="h-full flex flex-col flex-1 border border-slate-200 dark:border-slate-800 p-8 group"
+                  contentClassName="h-full flex flex-col justify-between flex-1"
                 >
                   <div>
                     {/* Top Pillar Header */}
@@ -77,7 +79,7 @@ export const ApproachSection: React.FC = () => {
                   </div>
 
                   {/* Bottom Accent Bar */}
-                  <div className="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800/80">
+                  <div className="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800/80 mt-auto">
                     <div className="w-12 h-1 rounded-full bg-gradient-to-r from-purple-600 to-amber-500 group-hover:w-full transition-all duration-500" />
                   </div>
                 </GlassCard>

@@ -40,13 +40,14 @@ export const CommunitySection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer(0.15)}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch"
         >
           {COMMUNITY_CARDS.map((card) => (
-            <motion.div key={card.title} variants={fadeUp(0, 0.5)}>
+            <motion.div key={card.title} variants={fadeUp(0, 0.5)} className="h-full flex flex-col">
               <GlassCard
                 glow={card.buttonVariant === 'emerald' ? 'emerald' : 'purple'}
-                className="h-full flex flex-col justify-between p-8 sm:p-10 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900"
+                className="h-full flex flex-col flex-1 p-8 sm:p-10 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900"
+                contentClassName="h-full flex flex-col justify-between flex-1"
               >
                 <div>
                   {/* Top Badge & Icon */}
@@ -81,7 +82,7 @@ export const CommunitySection: React.FC = () => {
                   href={card.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full"
+                  className="w-full mt-auto pt-4"
                 >
                   <Button
                     variant={card.buttonVariant === 'emerald' ? 'amber' : 'primary'}
