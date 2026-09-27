@@ -100,13 +100,17 @@ export const OwnPaceSection: React.FC = () => {
                   onClick={() => handleStageSelect(stage)}
                   className={`w-full text-left p-6 rounded-3xl transition-all duration-300 cursor-pointer border-2 relative overflow-hidden ${
                     isSelected
-                      ? 'bg-slate-950 dark:bg-slate-900 text-white shadow-2xl border-amber-400 scale-105'
-                      : 'bg-white dark:bg-slate-900 text-slate-950 dark:text-slate-200 border-slate-300 dark:border-slate-800 hover:border-amber-400 shadow-md'
+                      ? 'bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 text-white border-amber-300/80 shadow-xl shadow-amber-500/30 scale-105'
+                      : 'bg-white dark:bg-slate-900 text-slate-950 dark:text-slate-200 border-slate-200 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-500/60 shadow-md'
                   }`}
                 >
                   {/* Stage Age */}
                   <div className="flex items-center justify-end mb-4">
-                    <span className="text-xs font-extrabold text-amber-600 dark:text-amber-400 font-mono">
+                    <span
+                      className={`text-xs font-extrabold font-mono ${
+                        isSelected ? 'text-amber-100' : 'text-amber-600 dark:text-amber-400'
+                      }`}
+                    >
                       {stage.ageRange}
                     </span>
                   </div>
@@ -114,7 +118,11 @@ export const OwnPaceSection: React.FC = () => {
                   <h4 className="text-xl font-extrabold mb-1">
                     {stage.title}
                   </h4>
-                  <p className={`text-xs font-semibold mb-4 ${isSelected ? 'text-slate-300' : 'text-slate-600 dark:text-slate-400'}`}>
+                  <p
+                    className={`text-xs font-semibold mb-4 ${
+                      isSelected ? 'text-amber-50' : 'text-slate-600 dark:text-slate-400'
+                    }`}
+                  >
                     {stage.subTitle}
                   </p>
 
@@ -125,7 +133,7 @@ export const OwnPaceSection: React.FC = () => {
                         key={act}
                         className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full ${
                           isSelected
-                            ? 'bg-white/10 text-slate-200'
+                            ? 'bg-white/25 text-white'
                             : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-300'
                         }`}
                       >
@@ -150,7 +158,7 @@ export const OwnPaceSection: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="scroll-mt-28"
           >
-            <GlassCard glow="amber" className="p-8 sm:p-10 border-2 border-amber-500/40 bg-white dark:bg-slate-900">
+            <GlassCard glow="amber" className="p-8 sm:p-10 border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
                   <div className="flex items-center gap-2 mb-3">
@@ -171,7 +179,7 @@ export const OwnPaceSection: React.FC = () => {
                     {activeStage.features.map((feat) => (
                       <div
                         key={feat}
-                        className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-100 dark:bg-slate-800/70 text-sm font-extrabold text-slate-950 dark:text-slate-200 border border-slate-300 dark:border-slate-700"
+                        className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-100 dark:bg-slate-800/70 text-sm font-extrabold text-slate-950 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-800"
                       >
                         <CheckCircle2 className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                         <span>{feat}</span>
@@ -180,7 +188,7 @@ export const OwnPaceSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="lg:col-span-5 flex flex-col justify-center items-center text-center p-6 rounded-2xl bg-gradient-to-br from-amber-500/15 via-purple-500/10 to-transparent border-2 border-amber-400/30">
+                <div className="lg:col-span-5 flex flex-col justify-center items-center text-center p-6 rounded-2xl bg-gradient-to-br from-amber-500/15 via-purple-500/10 to-transparent border-2 border-amber-500/30">
                   <div className="w-16 h-16 rounded-full bg-amber-600 dark:bg-amber-500 text-white flex items-center justify-center shadow-lg shadow-amber-500/30 mb-4">
                     {getStageIcon(activeStage.id)}
                   </div>
