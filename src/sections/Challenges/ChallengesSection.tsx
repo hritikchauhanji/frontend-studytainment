@@ -26,7 +26,7 @@ export const ChallengesSection: React.FC = () => {
   };
 
   return (
-    <section id="challenges" className="py-20 sm:py-28 bg-slate-200/50 dark:bg-slate-950/40 relative overflow-hidden border-y border-slate-300/70 dark:border-slate-800/60">
+    <section id="challenges" className="py-10 sm:py-14 bg-slate-200/50 dark:bg-slate-950/40 relative overflow-hidden border-y border-slate-300/70 dark:border-slate-800/60">
       <Container>
         <SectionHeading
           title={
@@ -44,7 +44,7 @@ export const ChallengesSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={fadeUp(0, 0.6)}
-          className="mb-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 shadow-xl"
+          className="mb-8 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 shadow-xl"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* OLD WAY */}

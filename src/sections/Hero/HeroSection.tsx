@@ -18,7 +18,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative pt-6 pb-16 sm:pt-10 sm:pb-24 overflow-hidden min-h-[90vh] flex items-center"
+      className="relative pt-4 pb-8 sm:pt-6 sm:pb-10 overflow-hidden flex items-center"
     >
       {/* Background Decorative Gradients */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[900px] sm:h-[900px] bg-gradient-to-tr from-purple-500/25 via-indigo-500/15 to-amber-500/25 rounded-full blur-3xl pointer-events-none" />
@@ -70,7 +70,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Subtle Ecosystem Trust Points */}
-            <div className="mt-12 pt-8 border-t-2 border-slate-300 dark:border-slate-800/80 flex items-center gap-6 text-xs sm:text-sm text-slate-950 dark:text-slate-200 font-extrabold">
+            <div className="mt-8 pt-6 border-t-2 border-slate-300 dark:border-slate-800/80 flex items-center gap-6 text-xs sm:text-sm text-slate-950 dark:text-slate-200 font-extrabold">
               <span className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 dark:bg-emerald-500" />
                 Adaptive Learning

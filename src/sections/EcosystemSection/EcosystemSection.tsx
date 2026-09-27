@@ -24,7 +24,7 @@ export const EcosystemSection: React.FC = () => {
   };
 
   return (
-    <section id="what-is-studytainment" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="what-is-studytainment" className="py-10 sm:py-14 relative overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 

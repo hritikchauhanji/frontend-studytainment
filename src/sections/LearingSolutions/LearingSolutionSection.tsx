@@ -17,7 +17,7 @@ export const LearningSolutionsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'classroom' | 'smart-study' | 'online-classes'>('smart-study');
 
   return (
-    <section id="learning-ecosystem" className="py-20 sm:py-28 bg-slate-200/50 dark:bg-slate-950/40 relative overflow-hidden border-y border-slate-300/70 dark:border-slate-800/60">
+    <section id="learning-ecosystem" className="py-10 sm:py-14 bg-slate-200/50 dark:bg-slate-950/40 relative overflow-hidden border-y border-slate-300/70 dark:border-slate-800/60">
       <Container>
         <SectionHeading
           title={
@@ -29,7 +29,7 @@ export const LearningSolutionsSection: React.FC = () => {
         />
 
         {/* Product Selection Tab Bar */}
-        <div className="flex items-center justify-center gap-3 mb-12 flex-wrap">
+        <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
           {PRODUCTS.map((prod) => {
             const isActive = activeTab === prod.id;
             return (

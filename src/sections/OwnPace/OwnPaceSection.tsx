@@ -46,7 +46,7 @@ export const OwnPaceSection: React.FC = () => {
   };
 
   return (
-    <section id="own-pace-academy" className="py-20 sm:py-32 relative overflow-hidden">
+    <section id="own-pace-academy" className="py-10 sm:py-14 relative overflow-hidden">
       {/* Glow Effects */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -63,7 +63,7 @@ export const OwnPaceSection: React.FC = () => {
         />
 
         {/* 6 Beyond-Academics Core Pillars Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
           {[
             { title: 'Emotional Well-Being', icon: <Heart className="w-4 h-4 text-pink-600 dark:text-pink-400" /> },
             { title: 'Confidence Building', icon: <Shield className="w-4 h-4 text-purple-600 dark:text-purple-400" /> },
@@ -87,7 +87,7 @@ export const OwnPaceSection: React.FC = () => {
         </div>
 
         {/* Interactive Timeline Navigation */}
-        <div className="relative mb-12">
+        <div className="relative mb-8">
           {/* Animated Connecting Timeline Line */}
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-300 dark:bg-slate-800 -translate-y-1/2 z-0 hidden md:block" />
 
