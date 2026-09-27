@@ -282,3 +282,26 @@ export const FOCUS_PILLARS = [
     icon: 'Heart',
   },
 ];
+
+export const COMMUNITY_CARDS = [
+  {
+    title: 'WhatsApp Community',
+    type: 'Updates & Discussions',
+    description: 'Get live program updates, seminars & events announcements, and exclusive learning & parenting insights.',
+    cta: 'Join Community',
+    href: 'https://chat.whatsapp.com/',
+    icon: 'MessageSquare',
+    bgColor: 'from-emerald-500/10 via-emerald-500/5 to-transparent',
+    buttonVariant: 'emerald' as const,
+  },
+  {
+    title: 'Instagram Community',
+    type: 'Content & Inspiration',
+    description: 'Engaging educational reels, insightful parenting conversations, student spotlights, and daily updates.',
+    cta: 'Follow Us',
+    href: 'https://www.instagram.com/studytainment24/',
+    icon: 'Instagram',
+    bgColor: 'from-pink-500/10 via-purple-500/5 to-transparent',
+    buttonVariant: 'primary' as const,
+  },
+];
