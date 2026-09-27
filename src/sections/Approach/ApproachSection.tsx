@@ -26,11 +26,9 @@ export const ApproachSection: React.FC = () => {
   };
 
   return (
-    <section id="approach" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="approach" className="py-10 sm:py-14 relative overflow-hidden">
       <Container>
         <SectionHeading
-          badge="The Studytainment Approach"
-          badgeVariant="purple"
           title={
             <>
               A More Connected Way to Learn,{' '}

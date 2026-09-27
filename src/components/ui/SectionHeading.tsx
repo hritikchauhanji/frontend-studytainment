@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Badge } from './Badge';
 import { fadeUp } from '@/lib/utils';
 
 interface SectionHeadingProps {
@@ -16,9 +15,6 @@ interface SectionHeadingProps {
 }
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
-  badge,
-  badgeVariant = 'purple',
-  badgeIcon,
   title,
   subtitle,
   align = 'center',
@@ -36,16 +32,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
       variants={fadeUp(0, 0.6)}
-      className={cn('flex flex-col max-w-3xl mb-12 sm:mb-16', alignStyles[align], className)}
+      className={cn('flex flex-col max-w-3xl mb-6 sm:mb-8', alignStyles[align], className)}
     >
-      {badge && (
-        <div className="mb-4">
-          <Badge variant={badgeVariant} icon={badgeIcon} pulse={badgeVariant === 'amber'}>
-            {badge}
-          </Badge>
-        </div>
-      )}
-      
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white leading-[1.15]">
         {title}
       </h2>
@@ -58,3 +46,4 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     </motion.div>
   );
 };
+

@@ -46,16 +46,13 @@ export const OwnPaceSection: React.FC = () => {
   };
 
   return (
-    <section id="own-pace-academy" className="py-20 sm:py-32 relative overflow-hidden">
+    <section id="own-pace-academy" className="py-10 sm:py-14 relative overflow-hidden">
       {/* Glow Effects */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <Container>
         <SectionHeading
-          badge="Signature Lifelong Journey"
-          badgeVariant="amber"
-          badgeIcon={<Compass className="w-4 h-4" />}
           title={
             <>
               Learning Is Only One Part of{' '}
@@ -66,7 +63,7 @@ export const OwnPaceSection: React.FC = () => {
         />
 
         {/* 6 Beyond-Academics Core Pillars Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
           {[
             { title: 'Emotional Well-Being', icon: <Heart className="w-4 h-4 text-pink-600 dark:text-pink-400" /> },
             { title: 'Confidence Building', icon: <Shield className="w-4 h-4 text-purple-600 dark:text-purple-400" /> },
@@ -90,7 +87,7 @@ export const OwnPaceSection: React.FC = () => {
         </div>
 
         {/* Interactive Timeline Navigation */}
-        <div className="relative mb-12">
+        <div className="relative mb-8">
           {/* Animated Connecting Timeline Line */}
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-300 dark:bg-slate-800 -translate-y-1/2 z-0 hidden md:block" />
 
@@ -107,17 +104,8 @@ export const OwnPaceSection: React.FC = () => {
                       : 'bg-white dark:bg-slate-900 text-slate-950 dark:text-slate-200 border-slate-300 dark:border-slate-800 hover:border-amber-400 shadow-md'
                   }`}
                 >
-                  {/* Stage Top Tag & Age */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className={`text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full ${
-                        isSelected
-                          ? 'bg-amber-400 text-slate-950'
-                          : 'bg-amber-100 dark:bg-slate-800 text-amber-950 dark:text-amber-400'
-                      }`}
-                    >
-                      {stage.badge}
-                    </span>
+                  {/* Stage Age */}
+                  <div className="flex items-center justify-end mb-4">
                     <span className="text-xs font-extrabold text-amber-600 dark:text-amber-400 font-mono">
                       {stage.ageRange}
                     </span>
@@ -167,7 +155,7 @@ export const OwnPaceSection: React.FC = () => {
                 <div className="lg:col-span-7">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400">
-                      {activeStage.badge} Stage ({activeStage.ageRange})
+                      Stage ({activeStage.ageRange})
                     </span>
                   </div>
 
@@ -197,7 +185,7 @@ export const OwnPaceSection: React.FC = () => {
                     {getStageIcon(activeStage.id)}
                   </div>
                   <h4 className="text-lg font-extrabold text-slate-950 dark:text-white mb-2">
-                    Start {activeStage.badge} Guidance
+                    Start Guidance
                   </h4>
                   <p className="text-xs text-slate-700 dark:text-slate-400 font-semibold mb-4 max-w-xs">
                     Empowering long-term growth across critical life milestones.

@@ -34,14 +34,14 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="footer" className="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-300 pt-16 pb-8 border-t border-slate-300 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
+    <footer id="footer" className="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-300 pt-10 pb-6 border-t border-slate-300 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
       {/* Background glow effects */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <Container>
         {/* Newsletter Callout Banner */}
-        <div className="mb-16 p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900 border-2 border-purple-500/30 dark:border-purple-500/20 shadow-xl dark:shadow-2xl relative overflow-hidden">
+        <div className="mb-8 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-purple-500/30 dark:border-purple-500/20 shadow-xl dark:shadow-2xl relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <span className="text-amber-600 dark:text-amber-400 text-xs font-extrabold uppercase tracking-widest">
