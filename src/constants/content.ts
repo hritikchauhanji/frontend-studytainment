@@ -305,3 +305,32 @@ export const COMMUNITY_CARDS = [
     buttonVariant: 'primary' as const,
   },
 ];
+
+export const SOCIAL_LINKS = [
+  { name: 'Instagram', href: 'https://www.instagram.com/studytainment24/', icon: 'Instagram' },
+  { name: 'Facebook', href: 'https://www.facebook.com/people/Studytainment/61592715103557/?sk=directory_links', icon: 'Facebook' },
+  { name: 'YouTube', href: 'https://www.youtube.com/@Studytainmentofficial', icon: 'Youtube' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/studytainment/', icon: 'Linkedin' },
+];
+
+export const FOOTER_NAVIGATION = {
+  platform: [
+    { name: 'Studytainment Classroom', href: '#learning-ecosystem' },
+    { name: 'Smart Study', href: '#learning-ecosystem' },
+    { name: 'Online Classes', href: '#learning-ecosystem' },
+    { name: 'Own Pace Academy', href: '#own-pace-academy' },
+  ],
+  company: [
+    { name: 'About Studytainment', href: '#what-is-studytainment' },
+    { name: 'Our Approach', href: '#approach' },
+    { name: 'Our Focus', href: '#our-focus' },
+    { name: 'Careers', href: '#footer' },
+    { name: 'Contact Us', href: '#footer' },
+  ],
+  resources: [
+    { name: 'Seminars & Events', href: '#own-pace-academy' },
+    { name: 'Community Discussions', href: '#community' },
+    { name: 'Parenting Insights', href: '#community' },
+    { name: 'Student Growth Kit', href: '#digital-preview' },
+  ],
+};
