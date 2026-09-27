@@ -1,4 +1,5 @@
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
+import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ApproachSection } from "@/sections/Approach/ApproachSection";
 import { ChallengesSection } from "@/sections/Challenges/ChallengesSection";
@@ -56,6 +57,9 @@ export const Home: React.FC = () => {
                 {/* 12. Closing CTA Section */}
                 <CTASection />
             </main>
+
+            {/* 13. Complete Responsive Footer */}
+            <Footer />
         </div>
     )
 }
